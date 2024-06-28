@@ -9,6 +9,7 @@ export default function DataDisplay() {
         axios.get('https://jsonplaceholder.typicode.com/albums')
             .then(response => {
                 setAlbums(response.data)
+
             })
     }, []);
     return (

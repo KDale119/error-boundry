@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 import {yupResolver} from "@hookform/resolvers/yup"
-import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 
@@ -34,9 +34,8 @@ export default function AlbumForm({setAlbums}:DataProps) {
                 console.log(prevState)
                 return [...prevState as any []];
             })
+            throw Error ("Submission failed")
         })
-        alert("Form submitted")
-        console.log(formData)
     }
     const formKeys: {id: string, name: "title"}[] = [{
         id: "c", name: "title"}]
@@ -50,16 +49,16 @@ export default function AlbumForm({setAlbums}:DataProps) {
                     <>
                         <label>User ID</label>
                         <select id="a">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
+                            <option key="1">1</option>
+                            <option key="2">2</option>
+                            <option key="3">3</option>
+                            <option key="4">4</option>
+                            <option key="5">5</option>
+                            <option key="6">6</option>
+                            <option key="7">7</option>
+                            <option key="8">8</option>
+                            <option key="9">9</option>
+                            <option key="10">10</option>
                         </select>
                         <input placeholder="title" id="c"{...register(item.name)}/>
                     </>
